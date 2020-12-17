@@ -1,18 +1,19 @@
+
 <template>
   <div id="app">
     <div class="header">
         <nav>
-          <button> Inicio </button>
+          <button v-on:click="principal"> Inicio </button>
           <button> Login </button>
           <button> Registrarse </button>
-          <button> Consultar reserva </button>
+          <button v-on:click="get_reserva" v-if="is_auth"> Consultar reserva </button>
           <button> Hacer reserva </button>
           <button> Cancelar reserva </button>
         </nav>
         <h1> RESERVAS DE HOTEL APP </h1>
     </div>
     <div class="main-component">
-      
+      <router-view></router-view>
     </div>
     <div class="footer">
       <h4> G1M3 SPRINT3 MISIONTIC 2022 </h4>
@@ -25,8 +26,26 @@ export default {
   name: "App",
   data: function (){
     return {
-
+      is_auth: localStorage.getItem('isAuth') || false
     }
+  },
+  methods: {
+    get_reserva: function(){ 
+      if(this.$route.name != "consultar_reserva"){
+        let id_reserva_default = localStorage.getItem("default_reserva")
+        this.$router.push({name: "consultar_reserva", params:{reserva_default:id_reserva_default}})
+      }
+    },
+    principal: function(){
+      if(this.$route.name != "principal"){
+        this.$router.push({name: "principal"})
+      }
+    }
+  },
+  beforeCreate: function(){ 
+    localStorage.setItem('default_reserva', '3')
+    localStorage.setItem('isAuth', true)
+    this.$router.push({name: "inicio"})
   }
 }
 </script>
@@ -50,6 +69,7 @@ export default {
   .header h1{
     width: 35%;
     text-align: center;
+    font-size: 35px;
   }
   .header nav {
     height: 100%;
@@ -72,7 +92,7 @@ export default {
     border: 1px solid #07361e;
   }
   .main-component{
-    height: 71vh;
+    height: 100vh;
     margin: 0%;
     padding: 0%;
     background: #FDFEFE ;
