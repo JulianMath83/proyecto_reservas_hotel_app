@@ -36,7 +36,7 @@
         created: function () {
             this.reserva_default = this.$route.params.reserva_default 
             let self = this
-            axios.get("http://127.0.0.1:8000/user/reserva/" + this.reserva_default)
+            axios.get("https://reservas-hotel-api37.herokuapp.com/user/reserva/" + this.reserva_default)
             .then((result) => {
                 self.id_reserva = result.data.id_reserva
                 self.nombre = result.data.nombre
