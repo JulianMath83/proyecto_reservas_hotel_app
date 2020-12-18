@@ -30,15 +30,19 @@ export default {
     }
   },
   methods: {
-    get_reserva: function(){ 
-      if(this.$route.name != "consultar_reserva"){
-        let id_reserva_default = localStorage.getItem("default_reserva")
-        this.$router.push({name: "consultar_reserva", params:{reserva_default:id_reserva_default}})
-      }
-    },
     principal: function(){
       if(this.$route.name != "principal"){
         this.$router.push({name: "principal"})
+      }
+    },
+    get_reserva: function(){
+      if(this.$route.name != "consultar_reserva"){
+        this.$router.push({name: "consultar_reserva"})
+      }
+    },
+    form_make_reserva: function(){
+      if(this.$route.name != "formulario_make_reserva"){
+        this.$router.push({name: "formulario_make_reserva"})
       }
     }
   },
@@ -92,7 +96,7 @@ export default {
     border: 1px solid #07361e;
   }
   .main-component{
-    height: 100vh;
+    height: 90vh;
     margin: 0%;
     padding: 0%;
     background: #FDFEFE ;
