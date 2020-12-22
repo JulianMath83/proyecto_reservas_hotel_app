@@ -83,7 +83,7 @@ export default {
       }
     }
   },
-  Created: function(){
+  beforeCreate: function(){
     this.$router.push({name: "inicio"})
   }
 }
