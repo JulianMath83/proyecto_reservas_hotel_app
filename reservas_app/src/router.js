@@ -5,7 +5,7 @@ import Inicio from './components/Inicio'
 import ConsultarReserva from './components/ConsultarReserva'
 import HacerReserva from './components/HacerReserva'
 import CancelarReserva from './components/CancelarReserva'
-import Login from './components/login'
+import Login from './components/Login'
 import Registrarse from './components/Registrarse'
 
 const router = new vueRouter({
