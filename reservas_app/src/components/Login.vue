@@ -27,10 +27,10 @@
         methods: {
             processLogin: function(){
                 var self = this
-                axios.post("https://reservas-hotel-api37.herokuapp.com/user/login/", self.form, {headers: {}})
+                axios.post("https://reservas-hotel-api37.herokuapp.com/user/login/", self.form)
                 .then((result) => {
                     alert("Autenticación Exitosa");
-                    self.$emit("log-in");
+                    self.$emit('log-in');
                 })
                 .catch((error) => {
                     if (error.response.status == "404")
