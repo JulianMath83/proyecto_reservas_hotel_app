@@ -46,7 +46,7 @@ const router = new vueRouter({
             path: '/user/registro/',
             name: "registro_user",
             component: Registrarse
-        },
+        }
     ]
 })
 
