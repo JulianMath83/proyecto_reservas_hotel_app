@@ -145,7 +145,7 @@
                 this.resultado = !this.resultado
                 this.reserva_in = this.form
                 let self = this
-                axios.put("http://localhost:8000/user/reserva/make/", this.reserva_in)
+                axios.put("https://reservas-hotel-api37.herokuapp.com/user/reserva/make/", this.reserva_in)
                 .then((result) => {
                     self.id_reserva = result.data.id_reserva
                     self.nombre = result.data.nombre

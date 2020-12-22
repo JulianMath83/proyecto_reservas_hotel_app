@@ -59,7 +59,7 @@
                 this.resultado = !this.resultado
                 this.id_reserva = this.id_reserva_in
                 let self = this
-                axios.get("http://localhost:8000/user/reserva/" + this.id_reserva)
+                axios.get("https://reservas-hotel-api37.herokuapp.com/user/reserva/" + this.id_reserva)
                 .then((result) => {
                     self.id_reserva = result.data.id_reserva
                     self.nombre = result.data.nombre
