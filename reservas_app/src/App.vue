@@ -82,9 +82,6 @@ export default {
         this.$router.push({name: "registro_user"})
       }
     }
-  },
-  beforeCreate: function(){
-    this.$router.push({name: "inicio"})
   }
 }
 </script>
