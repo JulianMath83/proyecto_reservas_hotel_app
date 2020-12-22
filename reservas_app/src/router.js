@@ -1,10 +1,12 @@
 
 import vueRouter from 'vue-router'
 import App from './App'
-import CancelarReserva from './components/CancelarReserva'
 import Inicio from './components/Inicio'
 import ConsultarReserva from './components/ConsultarReserva'
 import HacerReserva from './components/HacerReserva'
+import CancelarReserva from './components/CancelarReserva'
+import Login from './components/login'
+import Registrarse from './components/Registrarse'
 
 const router = new vueRouter({
     mode: 'history',
@@ -34,6 +36,16 @@ const router = new vueRouter({
             path: '/user/reserva/cancel/',
             name: "cancelar_reserva",
             component: CancelarReserva
+        },
+        {
+            path: '/user/login/',
+            name: "login_usuario",
+            component: Login
+        },
+        {
+            path: '/user/registro/',
+            name: "registro_user",
+            component: Registrarse
         },
     ]
 })
